@@ -1,0 +1,18 @@
+name: TheHelper
+main: co.mcme.thehelper.TheHelper
+version: ${project.version}
+website: ${project.url}
+authors: [DonoA]
+description: help for mcme.
+author: DonoA
+commands:
+  helper:
+    usage: |
+            /helper pm <player>
+            /helper forums
+            /helper textures
+  devinfo:
+    usage: |
+            /devinfo versions
+            /devinfo jobs TSmonitor
+            /devinfo jobs TSmonitor <channel>
