@@ -1,9 +1,9 @@
-name: ${project.artifactId}
+name: TheHelper
 main: co.mcme.thehelper.TheHelper
 version: ${project.version}
 website: ${project.url}
 authors: [DonoA]
-description: A new player help for mcme.
+description: help for mcme.
 author: DonoA
 commands:
   helper:
