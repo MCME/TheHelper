@@ -1,7 +1,7 @@
 TheHelper
 =========
 
-<i>In-game perks</i><br/>
+<i>In-game player helper</i><br/>
 <br/>
 Author(s): Donovan
 <br/>
