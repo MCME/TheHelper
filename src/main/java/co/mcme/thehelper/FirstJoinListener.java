@@ -7,6 +7,7 @@
 package co.mcme.thehelper;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -25,7 +26,8 @@ public final class FirstJoinListener implements Listener{
           player.sendMessage("Welcome to MCME");
           player.sendMessage("To get extra information on this server type /helper");
           player.sendMessage("The forums are a very help full place, go to them here: http://www.mcmiddleearth.com/forums/");
-          player.sendMessage("If you have any questions, feel free to ask a ranger (there names are ?light blue?");
+          player.sendMessage("The texture pack is here: http://mcmiddleearth.com/resources/categories/official-resourcepacks.9/");
+          player.sendMessage("If you have any questions, feel free to ask a ranger (there names are " + ChatColor.DARK_AQUA + " teal"); 
         }
     }
 }
