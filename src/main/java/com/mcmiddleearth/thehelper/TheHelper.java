@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package co.mcme.thehelper;
+package com.mcmiddleearth.thehelper;
 
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;

@@ -1,9 +1,9 @@
 name: TheHelper
-main: co.mcme.thehelper.TheHelper
+main: com.mcmiddleearth.thehelper.TheHelper
 version: ${project.version}
 website: ${project.url}
 authors: [DonoA]
-description: help for mcme.
+description: Helper plugin for Minecraft Middle Earth.
 author: DonoA
 commands:
   helper:

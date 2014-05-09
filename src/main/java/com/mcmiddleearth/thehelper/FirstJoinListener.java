@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package co.mcme.thehelper;
+package com.mcmiddleearth.thehelper;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -25,7 +25,7 @@ public final class FirstJoinListener implements Listener{
           player.sendMessage("Welcome to MCME");
           player.sendMessage("To get extra information on this server type /helper");
           player.sendMessage("The forums are a very help full place, go to them here: http://www.mcmiddleearth.com/forums/");
-          player.sendMessage("If you have any questions, feel free to ask a ranger (there names are ?light blue?");
+          player.sendMessage("If you have any questions, feel free to ask a ranger (their names are ?light blue?");
         }
     }
 }

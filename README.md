@@ -1,6 +1,11 @@
 TheHelper
 =========
 
+<i>In-game perks</i><br/>
+<br/>
+Author(s): Donovan
+<br/>
+
 Tracks for new players, and sends valuable information to them.
 
 As of now, the Plugin does the following:
