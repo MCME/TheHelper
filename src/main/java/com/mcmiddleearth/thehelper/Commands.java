@@ -1,5 +1,6 @@
 package com.mcmiddleearth.thehelper;
 
+import java.util.TreeMap;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -14,9 +15,9 @@ public class Commands implements CommandExecutor{
            Player player = (Player) sender;
            if(command.getName().equalsIgnoreCase("helper")){
                if(args.length > 0){
-                   if(args[0].equalsIgnoreCase("converse")){
-                       
-                   }
+//                   if(args[0].equalsIgnoreCase("converse")){
+//                       
+//                   }
                    if(args[0].equalsIgnoreCase("forums")){
                        player.sendMessage("The forums are where discussions take place and where you can find help. Visit: http://www.mcmiddleearth.com/forums/");
                    }
@@ -31,7 +32,7 @@ public class Commands implements CommandExecutor{
            if(command.getName().equalsIgnoreCase("devinfo")){
                if(args.length > 0){
                    if(args[0].equalsIgnoreCase("versions")){
-                       player.sendMessage("x");
+                       player.sendMessage("http://mcme.joshr.hk/server/build");
                    }
                }
            }
