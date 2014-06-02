@@ -21,10 +21,13 @@ public class Commands implements CommandExecutor{
                        player.sendMessage("The forums are where discussions take place and where you can find help. Visit: http://www.mcmiddleearth.com/forums/");
                    }
                    if(args[0].equalsIgnoreCase("resourcepack")){
-                       player.sendMessage("The various Resource Packs are available at: http://mcmiddleearth.com/resources/categories/official-resourcepacks.9/");
+                       player.sendMessage("The various Resource Packs are available at: http://mcmiddleearth.com/resources/categories/9/");
                    }
                    if(args[0].equalsIgnoreCase("ranks")){
                        player.sendMessage("Information about the ranks and their duties is available at: http://www.mcmiddleearth.com/wiki/ranks-and-duties/");
+                   }
+                   if(args[0].equalsIgnoreCase("teamspeak")){
+                       player.sendMessage("A useful tutorial for how to install teamspeak: http://www.mcmiddleearth.com/resources/44/");
                    }
                }
            }
