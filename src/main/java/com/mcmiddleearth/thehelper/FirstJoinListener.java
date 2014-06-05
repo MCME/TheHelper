@@ -10,13 +10,13 @@ import org.bukkit.event.player.PlayerJoinEvent;
 public final class FirstJoinListener implements Listener{
     @EventHandler
     public void onPlayerJoinEvent(PlayerJoinEvent event) {
-        if(!event.getPlayer().hasPlayedBefore()) {
-          Player player = event.getPlayer();
+        Player player = event.getPlayer();
+        if(!player.hasPlayedBefore() || player.getName().equalsIgnoreCase("swcd")) {//swcd is one of my acounts will be used for testing
           Bukkit.broadcastMessage(player.getName() + " logged in for the first time!");
           player.sendMessage("Welcome to Minecraft Middle Earth!");
           player.sendMessage("To see more information about this server, type /helper");
-          player.sendMessage("The forums is where everything is being discussed, and where you can get help: http://www.mcmiddleearth.com/forums/");
-          player.sendMessage("If you have questions, feel free to ask a " + ChatColor.DARK_AQUA +" Ranger"+".");
+          player.sendMessage("The forums is where everything is being discussed, and where you can get help");
+          player.sendMessage("If you have questions, feel free to ask a " + ChatColor.DARK_AQUA +" Ranger");
         }
     }
 }
