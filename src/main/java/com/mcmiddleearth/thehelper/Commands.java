@@ -24,7 +24,7 @@ public class Commands implements CommandExecutor{
                    if(args[0].equalsIgnoreCase("forums")){
                        player.sendMessage("The forums are where discussions take place and where you can find help. Visit: http://www.mcmiddleearth.com/forums/");
                    }
-                   if(args[0].equalsIgnoreCase("resourcepack")){
+                   if(args[0].equalsIgnoreCase("textures")){
                        player.sendMessage("The various Resource Packs are available at: http://mcmiddleearth.com/resources/categories/official-resourcepacks.9/");
                    }
                    if(args[0].equalsIgnoreCase("ranks")){
