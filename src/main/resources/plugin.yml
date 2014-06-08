@@ -2,15 +2,17 @@ name: TheHelper
 main: com.mcmiddleearth.thehelper.TheHelper
 version: ${project.version}
 website: ${project.url}
-authors: [DonoA, q220]
+authors: [DonoA, q220, aaldim]
 description: Helper plugin for Minecraft Middle Earth.
-author: DonoA, q220
+author: DonoA, q220, aaldim
 commands:
   helper:
     usage: |
             /helper pm <player>
             /helper forums
             /helper textures
+            /helper dynmap
+            /helper newplayerguide
   devinfo:
     usage: |
             /devinfo versions
