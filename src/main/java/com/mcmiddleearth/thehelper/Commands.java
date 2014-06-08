@@ -30,6 +30,14 @@ public class Commands implements CommandExecutor{
                    if(args[0].equalsIgnoreCase("ranks")){
                        player.sendMessage("Information about the ranks and their duties is available at: http://www.mcmiddleearth.com/wiki/ranks-and-duties/");
                    }
+                   if(args[0].equalsIgnoreCase("dynmap")){
+                       player.sendMessage("The Dynmap is a useful map to find your way on the server");
+                       player.sendMessage("BuildServer Dynmap: http://build.mcmiddleearth.com:8123");
+                       player.sendMessage("FreeBuildServer Dynmap: http://freebuild.mcmiddleearth.com:8123");
+                   }
+                   if(args[0].equalsIgnoreCase("newplayerguide")){
+                       player.sendMessage("A useful guide for new players: http://www.mcmiddleearth.com/pages/new-player-guide/");
+                   }
                }
            }
            if(command.getName().equalsIgnoreCase("devinfo")){
