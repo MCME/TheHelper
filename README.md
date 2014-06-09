@@ -3,7 +3,7 @@ TheHelper
 
 <i>In-game player helper</i><br/>
 <br/>
-Author(s): DonoA, q220
+Author(s): DonoA, q220, aaldim
 <br/>
 
 Tracks for new players, and sends valuable information to them, such as the location of the forums, where to find the texturepacks, TeamSpeak and how to use it, ...
