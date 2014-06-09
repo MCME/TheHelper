@@ -11,8 +11,10 @@ commands:
             /helper pm <player>
             /helper forums
             /helper textures
-            /helper dynmap
-            /helper newplayerguide
+            /helper map
+            /helper guide
+            /helper rules
+            /helper servers
   devinfo:
     usage: |
             /devinfo versions

@@ -27,18 +27,24 @@ public class Commands implements CommandExecutor{
                        player.sendMessage("The forums are where discussions take place and where you can find help. Visit: http://www.mcmiddleearth.com/forums/");
                    }
                    if(args[0].equalsIgnoreCase("textures")){
-                       player.sendMessage("The various Resource Packs are available at: http://mcmiddleearth.com/resources/categories/official-resourcepacks.9/");
+                       player.sendMessage("The various Resource Packs are available at: http://mcmiddleearth.com/resources/categories/9/");
                    }
                    if(args[0].equalsIgnoreCase("ranks")){
                        player.sendMessage("Information about the ranks and their duties is available at: http://www.mcmiddleearth.com/wiki/ranks-and-duties/");
                    }
-                   if(args[0].equalsIgnoreCase("dynmap")){
+                   if(args[0].equalsIgnoreCase("servers")){
+                       player.sendMessage("All our IP's and domains can be found here: http://www.mcmiddleearth.com/resources/9/");
+                   }
+                   if(args[0].equalsIgnoreCase("dynmap")||args[0].equalsIgnoreCase("map")){
                        player.sendMessage("The Dynmap is a useful map to find your way on the server");
                        player.sendMessage("BuildServer Dynmap: http://build.mcmiddleearth.com:8123");
                        player.sendMessage("FreeBuildServer Dynmap: http://freebuild.mcmiddleearth.com:8123");
                    }
-                   if(args[0].equalsIgnoreCase("newplayerguide")){
+                   if(args[0].equalsIgnoreCase("newplayerguide")||args[0].equalsIgnoreCase("guide")){
                        player.sendMessage("A useful guide for new players: http://www.mcmiddleearth.com/pages/new-player-guide/");
+                   }
+                   if(args[0].equalsIgnoreCase("rules")){
+                       player.sendMessage("Our Terms of Service and Rules can be found here: http://www.mcmiddleearth.com/help/terms");
                    }
                }
            }
