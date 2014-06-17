@@ -46,9 +46,6 @@ public class Commands implements CommandExecutor{
            }
             if(command.getName().equalsIgnoreCase("devinfo")){
                 if(player.hasPermission("TheHelper.info")){
-//                      char locchrs[] = {104, 116, 116, 112, 58, 47, 47, 109, 99, 109, 101, 046, 106, 111, 115, 104, 114, 046, 104, 107, 047, 115, 101, 114, 118, 101, 114, 047, 98, 117, 105, 108, 100};
-//                      String loc = String.valueOf(locchrs);
-                      //I was really bored so I did this =)
                     if(args.length > 0){
                         if(args[0].equalsIgnoreCase("versions")){
                             if(args.length == 1){
