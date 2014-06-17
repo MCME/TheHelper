@@ -1,8 +1,10 @@
 package com.mcmiddleearth.thehelper;
 
+import java.util.ArrayList;
 import java.util.TreeMap;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -50,9 +52,6 @@ public class Commands implements CommandExecutor{
            }
             if(command.getName().equalsIgnoreCase("devinfo")){
                 if(player.hasPermission("TheHelper.info")){
-//                      char locchrs[] = {104, 116, 116, 112, 58, 47, 47, 109, 99, 109, 101, 046, 106, 111, 115, 104, 114, 046, 104, 107, 047, 115, 101, 114, 118, 101, 114, 047, 98, 117, 105, 108, 100};
-//                      String loc = String.valueOf(locchrs);
-                      //I was really bored so I did this =)
                     if(args.length > 0){
                         if(args[0].equalsIgnoreCase("versions")){
                             if(args.length == 1){
@@ -62,7 +61,13 @@ public class Commands implements CommandExecutor{
                                 return true;
                             }
                         }else if(args[0].equalsIgnoreCase("player")&&args.length>1){
-                            
+                            //broken atm needs more work
+                            OfflinePlayer p = Bukkit.getOfflinePlayer(args[0]);
+                            Player pl = p.getPlayer();
+                            player.sendMessage(ChatColor.AQUA + pl.getName());
+                            player.sendMessage("========================");
+                            player.sendMessage(ChatColor.YELLOW + "UUID: " + ChatColor.DARK_GREEN + pl.getUniqueId().toString());
+                            player.sendMessage(ChatColor.YELLOW + "Last Played: " + ChatColor.DARK_GREEN + String.valueOf(p.getLastPlayed()));
                             return true;
                         }else{
                             Plugin p = Bukkit.getServer().getPluginManager().getPlugin(args[0]);
@@ -86,6 +91,9 @@ public class Commands implements CommandExecutor{
                                 }
                                 player.sendMessage("  -" + ChatColor.LIGHT_PURPLE + s + ": " + ChatColor.DARK_AQUA + cmd);
                             }
+//                            if(args[0].equalsIgnoreCase("aimcme")){
+//                                player.sendMessage(p.getpSaves());
+//                            }
                             return true;
                         }           
                     }
