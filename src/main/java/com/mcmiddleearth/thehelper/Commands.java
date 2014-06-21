@@ -61,12 +61,10 @@ public class Commands implements CommandExecutor{
                                 return true;
                             }
                         }else if(args[0].equalsIgnoreCase("player")&&args.length>1){
-                            //broken atm needs more work
                             OfflinePlayer p = Bukkit.getOfflinePlayer(args[0]);
-                            Player pl = p.getPlayer();
-                            player.sendMessage(ChatColor.AQUA + pl.getName());
+                            player.sendMessage(ChatColor.AQUA + p.getName());
                             player.sendMessage("========================");
-                            player.sendMessage(ChatColor.YELLOW + "UUID: " + ChatColor.DARK_GREEN + pl.getUniqueId().toString());
+                            player.sendMessage(ChatColor.AQUA + "First Join: " + ChatColor.DARK_GREEN + String.valueOf(p.getFirstPlayed()));
                             player.sendMessage(ChatColor.YELLOW + "Last Played: " + ChatColor.DARK_GREEN + String.valueOf(p.getLastPlayed()));
                             return true;
                         }else{
