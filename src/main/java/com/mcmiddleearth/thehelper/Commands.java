@@ -1,7 +1,5 @@
 package com.mcmiddleearth.thehelper;
 
-import java.util.ArrayList;
-import java.util.TreeMap;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -19,9 +17,6 @@ public class Commands implements CommandExecutor{
            Player player = (Player) sender;
            if(command.getName().equalsIgnoreCase("helper")){
                if(args.length > 0){
-//                   if(args[0].equalsIgnoreCase("converse")){
-//                       
-//                   }
                    if(args[0].equalsIgnoreCase("teamspeak")||args[0].equalsIgnoreCase("ts")){
                        player.sendMessage("TeamSpeak is how mcme communicates on projects. Download TeamSpeak 3 here: http://www.teamspeak.com/?page=downloads");
                    }
@@ -83,9 +78,6 @@ public class Commands implements CommandExecutor{
                                 }
                                 player.sendMessage("  -" + ChatColor.LIGHT_PURPLE + s + ": " + ChatColor.DARK_AQUA + cmd);
                             }
-//                            if(args[0].equalsIgnoreCase("aimcme")){
-//                                player.sendMessage(p.getpSaves());
-//                            }
                             return true;
                         }           
                     }
