@@ -4,6 +4,7 @@ import java.util.Date;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.WeatherType;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -46,7 +47,7 @@ public class Commands implements CommandExecutor{
                    }
                }
            }
-            if(command.getName().equalsIgnoreCase("devinfo")){
+           else if(command.getName().equalsIgnoreCase("devinfo")){
                 if(player.hasPermission("TheHelper.info")){
                     if(args.length > 0){
                         if(args[0].equalsIgnoreCase("versions")){
@@ -88,6 +89,18 @@ public class Commands implements CommandExecutor{
                             return true;
                         }           
                     }
+               }
+           }
+           else if(command.getName().equalsIgnoreCase("pweather")){
+               if(args.length > 0){
+                   if(args[0].equalsIgnoreCase("clear")){
+                        player.setPlayerWeather(WeatherType.CLEAR);
+                   }else if(args[0].equalsIgnoreCase("rain")||args[0].equalsIgnoreCase("downfall")){
+                       player.setPlayerWeather(WeatherType.DOWNFALL);
+                   }else if(args[0].equalsIgnoreCase("reset")){
+                       player.resetPlayerWeather();
+                   }
+                   return true;
                }
            }
         } else {
