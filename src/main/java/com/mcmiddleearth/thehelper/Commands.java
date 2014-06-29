@@ -1,5 +1,6 @@
 package com.mcmiddleearth.thehelper;
 
+import java.util.Date;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -18,24 +19,24 @@ public class Commands implements CommandExecutor{
            if(command.getName().equalsIgnoreCase("helper")){
                if(args.length > 0){
                    if(args[0].equalsIgnoreCase("teamspeak")||args[0].equalsIgnoreCase("ts")){
-                       player.sendMessage("TeamSpeak is how mcme communicates on projects. Download TeamSpeak 3 here: http://www.teamspeak.com/?page=downloads");
+                       player.sendMessage("TeamSpeak is how mcme communicates on projects. Download TeamSpeak 3 here: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
                    }
-                   if(args[0].equalsIgnoreCase("forums")){
-                       player.sendMessage("The forums are where discussions take place and where you can find help. Visit: http://www.mcmiddleearth.com/forums/");
+                   else if(args[0].equalsIgnoreCase("forums")){
+                       player.sendMessage("The forums are where discussions take place and where you can find help. Visit: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
                    }
-                   if(args[0].equalsIgnoreCase("textures")){
-                       player.sendMessage("The various Resource Packs are available at: http://mcmiddleearth.com/resources/categories/official-resourcepacks.9/");
+                   else if(args[0].equalsIgnoreCase("textures")){
+                       player.sendMessage("The various Resource Packs are available at: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
                    }
-                   if(args[0].equalsIgnoreCase("ranks")){
-                       player.sendMessage("Information about the ranks and their duties is available at: http://www.mcmiddleearth.com/wiki/ranks-and-duties/");
+                   else if(args[0].equalsIgnoreCase("ranks")){
+                       player.sendMessage("Information about the ranks and their duties is available at: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
                    }
-                   if(args[0].equalsIgnoreCase("dynmap")){
+                   else if(args[0].equalsIgnoreCase("dynmap")){
                        player.sendMessage("The Dynmap is a useful map to find your way on the server");
-                       player.sendMessage("BuildServer Dynmap: http://build.mcmiddleearth.com:8123");
-                       player.sendMessage("FreeBuildServer Dynmap: http://freebuild.mcmiddleearth.com:8123");
+                       player.sendMessage("BuildServer Dynmap: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase() + "b"));
+                       player.sendMessage("FreeBuildServer Dynmap: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase() + "fb"));
                    }
-                   if(args[0].equalsIgnoreCase("newplayerguide")){
-                       player.sendMessage("A useful guide for new players: http://www.mcmiddleearth.com/pages/new-player-guide/");
+                   else if(args[0].equalsIgnoreCase("newplayerguide")){
+                       player.sendMessage("A useful guide for new players: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
                    }
                }
            }
@@ -53,8 +54,8 @@ public class Commands implements CommandExecutor{
                             OfflinePlayer p = Bukkit.getOfflinePlayer(args[0]);
                             player.sendMessage(ChatColor.AQUA + p.getName());
                             player.sendMessage("========================");
-                            player.sendMessage(ChatColor.AQUA + "First Join: " + ChatColor.DARK_GREEN + String.valueOf(p.getFirstPlayed()));
-                            player.sendMessage(ChatColor.YELLOW + "Last Played: " + ChatColor.DARK_GREEN + String.valueOf(p.getLastPlayed()));
+                            player.sendMessage(ChatColor.AQUA + "First Join: " + ChatColor.DARK_GREEN + String.valueOf(new Date(p.getFirstPlayed())));
+                            player.sendMessage(ChatColor.YELLOW + "Last Played: " + ChatColor.DARK_GREEN + String.valueOf(new Date(p.getLastPlayed())));
                             return true;
                         }else{
                             Plugin p = Bukkit.getServer().getPluginManager().getPlugin(args[0]);
