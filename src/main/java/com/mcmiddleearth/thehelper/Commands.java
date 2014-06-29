@@ -30,6 +30,7 @@ public class Commands implements CommandExecutor{
                    else if(args[0].equalsIgnoreCase("ranks")){
                        player.sendMessage("Information about the ranks and their duties is available at: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
                    }
+<<<<<<< HEAD
                    if(args[0].equalsIgnoreCase("servers")){
                        player.sendMessage("All our IP's and domains can be found here: http://www.mcmiddleearth.com/resources/9/");
                    }
@@ -43,6 +44,15 @@ public class Commands implements CommandExecutor{
                    }
                    if(args[0].equalsIgnoreCase("rules")){
                        player.sendMessage("Our Terms of Service and Rules can be found here: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+=======
+                   else if(args[0].equalsIgnoreCase("dynmap")){
+                       player.sendMessage("The Dynmap is a useful map to find your way on the server");
+                       player.sendMessage("BuildServer Dynmap: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase() + "b"));
+                       player.sendMessage("FreeBuildServer Dynmap: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase() + "fb"));
+                   }
+                   else if(args[0].equalsIgnoreCase("newplayerguide")){
+                       player.sendMessage("A useful guide for new players: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+>>>>>>> 058d2489fc48b54ddd88d07ab5aff023f14ea678
                    }
                }
            }

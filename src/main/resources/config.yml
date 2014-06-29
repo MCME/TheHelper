@@ -7,5 +7,8 @@ url:
     dynmapf: http://build.mcmiddleearth.com:8123
     dynmapfb: http://freebuild.mcmiddleearth.com:8123
     newplayerguide: http://www.mcmiddleearth.com/pages/new-player-guide/
+<<<<<<< HEAD
     guide: http://www.mcmiddleearth.com/pages/new-player-guide/
+=======
+>>>>>>> 058d2489fc48b54ddd88d07ab5aff023f14ea678
     rules: http://www.mcmiddleearth.com/help/terms
