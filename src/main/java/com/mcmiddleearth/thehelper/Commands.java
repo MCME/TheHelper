@@ -19,30 +19,30 @@ public class Commands implements CommandExecutor{
            if(command.getName().equalsIgnoreCase("helper")){
                if(args.length > 0){
                    if(args[0].equalsIgnoreCase("teamspeak")||args[0].equalsIgnoreCase("ts")){
-                       player.sendMessage("TeamSpeak is how mcme communicates on projects. Download TeamSpeak 3 here: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       player.sendMessage(ChatColor.AQUA + "TeamSpeak is how mcme communicates on projects. Download TeamSpeak 3 here: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
                    }
                    else if(args[0].equalsIgnoreCase("forums")){
-                       player.sendMessage("The forums are where discussions take place and where you can find help. Visit: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       player.sendMessage(ChatColor.AQUA + "The forums are where discussions take place and where you can find help. Visit: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
                    }
                    else if(args[0].equalsIgnoreCase("textures")){
-                       player.sendMessage("The various Resource Packs are available at: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       player.sendMessage(ChatColor.AQUA + "The various Resource Packs are available at: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
                    }
                    else if(args[0].equalsIgnoreCase("ranks")){
-                       player.sendMessage("Information about the ranks and their duties is available at: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       player.sendMessage(ChatColor.AQUA + "Information about the ranks and their duties is available at: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
                    }
                    else if(args[0].equalsIgnoreCase("servers")){
-                       player.sendMessage("All our IP's and domains can be found here: http://www.mcmiddleearth.com/resources/9/");
+                       player.sendMessage(ChatColor.AQUA + "All our IP's and domains can be found here: http://www.mcmiddleearth.com/resources/9/");
                    }
                    else if(args[0].equalsIgnoreCase("dynmap")||args[0].equalsIgnoreCase("map")){
-                       player.sendMessage("The Dynmap is a useful map to find your way on the server");
-                       player.sendMessage("BuildServer Dynmap: " + TheHelper.pluginInstance.urls.get("dynmapb"));
-                       player.sendMessage("FreeBuildServer Dynmap: " + TheHelper.pluginInstance.urls.get("dynmapfb"));
+                       player.sendMessage(ChatColor.AQUA + "The Dynmap is a useful map to find your way on the server");
+                       player.sendMessage(ChatColor.DARK_AQUA + "BuildServer Dynmap: " + TheHelper.pluginInstance.urls.get("dynmapb"));
+                       player.sendMessage(ChatColor.AQUA + "FreeBuildServer Dynmap: " + TheHelper.pluginInstance.urls.get("dynmapfb"));
                    }
                    else if(args[0].equalsIgnoreCase("newplayerguide")||args[0].equalsIgnoreCase("guide")){
-                       player.sendMessage("A useful guide for new players: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       player.sendMessage(ChatColor.AQUA + "A useful guide for new players: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
                    }
                    else if(args[0].equalsIgnoreCase("rules")){
-                       player.sendMessage("Our Terms of Service and Rules can be found here: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       player.sendMessage(ChatColor.AQUA + "Our Terms of Service and Rules can be found here: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
                    }
                }
            }
