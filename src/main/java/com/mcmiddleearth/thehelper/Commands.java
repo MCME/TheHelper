@@ -58,7 +58,7 @@ public class Commands implements CommandExecutor{
                                 return true;
                             }
                         }else if(args[0].equalsIgnoreCase("player")&&args.length>1){
-                            OfflinePlayer p = Bukkit.getOfflinePlayer(args[0]);
+                            OfflinePlayer p = Bukkit.getOfflinePlayer(args[1]);
                             player.sendMessage(ChatColor.AQUA + p.getName());
                             player.sendMessage("========================");
                             player.sendMessage(ChatColor.AQUA + "First Join: " + ChatColor.DARK_GREEN + String.valueOf(new Date(p.getFirstPlayed())));
