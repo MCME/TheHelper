@@ -20,8 +20,6 @@ commands:
             /devinfo versions
             /devinfo jobs TSmonitor
             /devinfo jobs TSmonitor <channel>
-  pweather:
-    usage: /pweather <clear|rain|reset>
 permissions:
   TheHelper.info:
     default: op
