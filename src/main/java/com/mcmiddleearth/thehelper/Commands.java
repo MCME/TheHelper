@@ -91,18 +91,6 @@ public class Commands implements CommandExecutor{
                     }
                }
            }
-           else if(command.getName().equalsIgnoreCase("pweather")){
-               if(args.length > 0){
-                   if(args[0].equalsIgnoreCase("clear")){
-                        player.setPlayerWeather(WeatherType.CLEAR);
-                   }else if(args[0].equalsIgnoreCase("rain")||args[0].equalsIgnoreCase("downfall")){
-                       player.setPlayerWeather(WeatherType.DOWNFALL);
-                   }else if(args[0].equalsIgnoreCase("reset")){
-                       player.resetPlayerWeather();
-                   }
-                   return true;
-               }
-           }
         } else {
            sender.sendMessage("You must be a player!");
            return false;
