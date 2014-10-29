@@ -4,9 +4,10 @@ version: 1.1.3
 website: ${project.url}
 authors: [DonoA, q220, aaldim]
 description: Helper plugin for Minecraft Middle Earth.
-author: DonoA, q220, aaldim
+author: DonoA
 commands:
   helper:
+    description: Helps new players
     usage: |
             /helper pm <player>
             /helper forums
@@ -16,21 +17,12 @@ commands:
             /helper rules
             /helper servers
   devinfo:
+    description: Helps devs
     usage: |
             /devinfo versions
-            /devinfo jobs TSmonitor
-            /devinfo jobs TSmonitor <channel>
-  pweather:
-    usage: /pweather <clear|rain|reset>
+#            /devinfo jobs TSmonitor
+#            /devinfo jobs TSmonitor <channel>
 permissions:
   TheHelper.info:
     default: op
-    children:
-      TheHelper.info.dev: true
-      TheHelper.info.admin: true
-  TheHelper.info.dev:
     description: permissions for developers.
-    default: op
-  TheHelper.info.admin:
-    description: permission for staff/admin.
-    default: op

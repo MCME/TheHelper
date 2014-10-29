@@ -20,8 +20,10 @@ public class TheHelper extends JavaPlugin {
         pluginInstance=this;
         getCommand("helper").setExecutor(new Commands());
 	getCommand("devinfo").setExecutor(new Commands());
-        PluginManager pm = this.getServer().getPluginManager();
-        pm.registerEvents(new FirstJoinListener(), this);
+        if(this.getConfig().getBoolean("welcomeMsg")){
+            PluginManager pm = this.getServer().getPluginManager();
+            pm.registerEvents(new FirstJoinListener(), this);
+        }
         for(String s : config.getKeys(true)){
             if(s.contains("url.")){
                 urls.put(s.replace("url.", ""), config.getString(s));
