@@ -9,7 +9,7 @@ Author(s): DonoA, q220, aaldim
 Tracks for new players, and sends valuable information to them, such as the location of the forums, where to find the texturepacks, TeamSpeak and how to use it, ...
 Also is used to supply developers with various statistics and debug information.
 
-As of now, the Plugin does the following:
+As of now, the Plugin does the following when welcomeMSG is set to true in the config:
 
 - Checks if the player is a new player or not by verifying if there's a valid profile within the world folder.
 - If no profile was found, it broadcasts a message server wide informing everyone that the player is new.
