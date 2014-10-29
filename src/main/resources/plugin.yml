@@ -9,7 +9,6 @@ commands:
   helper:
     description: Helps new players
     usage: |
-            /helper pm <player>
             /helper forums
             /helper textures
             /helper map
@@ -20,6 +19,8 @@ commands:
     description: Helps devs
     usage: |
             /devinfo versions
+            /devinfo player [player]
+            /devinfo [plugin]
 #            /devinfo jobs TSmonitor
 #            /devinfo jobs TSmonitor <channel>
 permissions:
