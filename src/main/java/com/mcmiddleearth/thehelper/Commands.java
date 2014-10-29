@@ -1,17 +1,23 @@
 package com.mcmiddleearth.thehelper;
 
-import static com.mcmiddleearth.thehelper.TheHelper.THcc;
+
+import static com.mcmiddleearth.thehelper.TheHelper.THccl;
+import static com.mcmiddleearth.thehelper.TheHelper.THccm;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-public class Commands implements CommandExecutor{
+public class Commands implements TabExecutor{
     
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -20,31 +26,39 @@ public class Commands implements CommandExecutor{
            if(command.getName().equalsIgnoreCase("helper")){
                if(args.length > 0){
                    if(args[0].equalsIgnoreCase("teamspeak")||args[0].equalsIgnoreCase("ts")){
-                       player.sendMessage(THcc+"TeamSpeak is how mcme communicates on projects. Download TeamSpeak 3 here: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
-                       player.sendMessage(THcc+"To connect to TeamSpeak, click here: "+ChatColor.RED+"http://tinyurl.com/nuclz3f/?nickname="+player.getName());
+                       player.sendMessage(THccm+"TeamSpeak is how mcme communicates on projects. Download TeamSpeak 3 here: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       player.sendMessage(THccm+"To connect to TeamSpeak, click here: " + THccl + "http://tinyurl.com/nuclz3f/?nickname="+player.getName());
+                       return true;
                    }
                    else if(args[0].equalsIgnoreCase("forums")){
-                       player.sendMessage(THcc+"The forums are where discussions take place and where you can find help. Visit: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       player.sendMessage(THccm+"The forums are where discussions take place and where you can find help. Visit: " + THccl + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       return true;
                    }
                    else if(args[0].equalsIgnoreCase("textures")){
-                       player.sendMessage(THcc+"The various Resource Packs are available at: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       player.sendMessage(THccm+"The various Resource Packs are available at: " + THccl + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       return true;
                    }
                    else if(args[0].equalsIgnoreCase("ranks")){
-                       player.sendMessage(THcc+"Information about the ranks and their duties is available at: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       player.sendMessage(THccm+"Information about the ranks and their duties is available at: " + THccl + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       return true;
                    }
                    else if(args[0].equalsIgnoreCase("servers")){
-                       player.sendMessage(THcc+"All our IP's and domains can be found here: http://www.mcmiddleearth.com/resources/9/");
+                       player.sendMessage(THccm+"All our IP's and domains can be found here: " + THccl + "http://www.mcmiddleearth.com/resources/9/");
+                       return true;
                    }
                    else if(args[0].equalsIgnoreCase("dynmap")||args[0].equalsIgnoreCase("map")){
-                       player.sendMessage(THcc+"The Dynmap is a useful map to find your way on the server");
-                       player.sendMessage(THcc+"BuildServer Dynmap: " + TheHelper.pluginInstance.urls.get("dynmapb"));
-                       player.sendMessage(THcc+"FreeBuildServer Dynmap: " + TheHelper.pluginInstance.urls.get("dynmapfb"));
+                       player.sendMessage(THccm+"The Dynmap is a useful map to find your way on the server");
+                       player.sendMessage(THccm+"BuildServer Dynmap: " + THccl + TheHelper.pluginInstance.urls.get("dynmapb"));
+                       player.sendMessage(THccm+"FreeBuildServer Dynmap: " + THccl + TheHelper.pluginInstance.urls.get("dynmapfb"));
+                       return true;
                    }
                    else if(args[0].equalsIgnoreCase("newplayerguide")||args[0].equalsIgnoreCase("guide")){
-                       player.sendMessage(THcc+"A useful guide for new players: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       player.sendMessage(THccm+"A useful guide for new players: " + THccl + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       return true;
                    }
                    else if(args[0].equalsIgnoreCase("rules")){
-                       player.sendMessage(THcc+"Our Terms of Service and Rules can be found here: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       player.sendMessage(THccm+"Our Terms of Service and Rules can be found here: " + THccl + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       return true;
                    }
                }
            }
@@ -93,9 +107,24 @@ public class Commands implements CommandExecutor{
                }
            }
         } else {
-           sender.sendMessage(THcc+"You must be a player!");
+           sender.sendMessage(THccm+"You must be a player!");
            return false;
         }
         return false;
+    }
+    
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        if(command.getName().equalsIgnoreCase("helper")){
+            return Arrays.asList(new String[] {"teamspeak", "forums", "textures", "ranks", "servers", "dynmap", "guide", "rules"});
+        }else if(command.getName().equalsIgnoreCase("devinfo")){
+            List<String> tabs = new ArrayList<>(Arrays.asList(new String[] {"versions", "player"}));
+            for(Plugin p : Bukkit.getPluginManager().getPlugins()){
+                tabs.add(p.getName());
+            }
+            return tabs;
+        }
+        return null;
+        
     }
 }
