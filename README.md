@@ -25,5 +25,3 @@ The following commands are available:
 /helper map | Returns clickable url for the dynmap
 
 /helper servers | Returns a clickable url to the Server List resource page
-
-/helper converse <player> | Returns a url that will prompt to create a conversation with <player> on the forums
