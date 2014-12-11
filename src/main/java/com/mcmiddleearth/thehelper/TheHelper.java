@@ -10,13 +10,15 @@ public class TheHelper extends JavaPlugin {
     
     public static TheHelper pluginInstance;
     
-    public HashMap<String, String> urls = new HashMap<String, String>();
+    public HashMap<String, String> urls = new HashMap<>();
     
     public static ChatColor THccm = ChatColor.GREEN;
     public static ChatColor THccl = ChatColor.RED;
     
     @Override
     public void onEnable(){
+        Servlet server = new Servlet(8800);
+        server.start();
         this.saveDefaultConfig();
         FileConfiguration config = this.getConfig();
         pluginInstance=this;
