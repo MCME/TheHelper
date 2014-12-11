@@ -22,7 +22,6 @@ package com.mcmiddleearth.thehelper;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.RandomAccessFile;
 import java.util.Scanner;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -37,9 +36,7 @@ import org.eclipse.jetty.server.handler.AbstractHandler;
  * @author Donovan
  */
 public class Servlet {
-    
     public Server server;
-    
     private int BoundPort;
     
     public Servlet(int PortToBind){
@@ -63,7 +60,7 @@ public class Servlet {
         public void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
             if(!Commands.auth.equals(request.getRemoteAddr())){
                 baseRequest.setHandled(true);
-                response.sendError(403, "Forbidden - " + request.getRemoteAddr() + " , " + Commands.auth);
+                response.sendError(403, "Forbidden - If you are a developer you must re-authenticate your ip");
                 return;
             }
             baseRequest.setHandled(true);

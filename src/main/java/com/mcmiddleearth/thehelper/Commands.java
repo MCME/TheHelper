@@ -3,15 +3,10 @@ package com.mcmiddleearth.thehelper;
 
 import static com.mcmiddleearth.thehelper.TheHelper.THccl;
 import static com.mcmiddleearth.thehelper.TheHelper.THccm;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;

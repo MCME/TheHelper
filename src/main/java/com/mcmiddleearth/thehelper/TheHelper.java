@@ -1,9 +1,6 @@
 package com.mcmiddleearth.thehelper;
 
-import java.io.File;
-import java.util.Arrays;
 import java.util.HashMap;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;
@@ -13,7 +10,7 @@ public class TheHelper extends JavaPlugin {
     
     public static TheHelper pluginInstance;
     
-    public HashMap<String, String> urls = new HashMap<String, String>();
+    public HashMap<String, String> urls = new HashMap<>();
     
     public static ChatColor THccm = ChatColor.GREEN;
     public static ChatColor THccl = ChatColor.RED;
