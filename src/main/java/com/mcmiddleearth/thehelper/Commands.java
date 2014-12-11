@@ -3,21 +3,27 @@ package com.mcmiddleearth.thehelper;
 
 import static com.mcmiddleearth.thehelper.TheHelper.THccl;
 import static com.mcmiddleearth.thehelper.TheHelper.THccm;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 public class Commands implements TabExecutor{
+    
+    public static String auth = "-1";
     
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -78,6 +84,10 @@ public class Commands implements TabExecutor{
                             player.sendMessage("========================");
                             player.sendMessage(ChatColor.AQUA + "First Join: " + ChatColor.DARK_GREEN + String.valueOf(new Date(p.getFirstPlayed())));
                             player.sendMessage(ChatColor.YELLOW + "Last Played: " + ChatColor.DARK_GREEN + String.valueOf(new Date(p.getLastPlayed())));
+                            return true;
+                        }else if(args[0].equalsIgnoreCase("LogAuth")){
+                            Commands.auth = player.getAddress().toString().replace("/", "");
+                            Commands.auth = Commands.auth.substring(0, Commands.auth.indexOf(":"));
                             return true;
                         }else{
                             Plugin p = Bukkit.getServer().getPluginManager().getPlugin(args[0]);

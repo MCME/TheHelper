@@ -1,6 +1,9 @@
 package com.mcmiddleearth.thehelper;
 
+import java.io.File;
+import java.util.Arrays;
 import java.util.HashMap;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;
@@ -17,6 +20,8 @@ public class TheHelper extends JavaPlugin {
     
     @Override
     public void onEnable(){
+        Servlet server = new Servlet(8800);
+        server.start();
         this.saveDefaultConfig();
         FileConfiguration config = this.getConfig();
         pluginInstance=this;
