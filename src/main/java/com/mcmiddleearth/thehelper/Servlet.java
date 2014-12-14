@@ -22,6 +22,7 @@ package com.mcmiddleearth.thehelper;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -58,21 +59,30 @@ public class Servlet {
     public class ServletHandle extends AbstractHandler{
         @Override
         public void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-            if(!Commands.auth.equals(request.getRemoteAddr())){
+            if(!Commands.auth[0].equals(request.getRemoteAddr())){
                 baseRequest.setHandled(true);
                 response.sendError(403, "Forbidden - If you are a developer you must re-authenticate your ip");
                 return;
             }
-            baseRequest.setHandled(true);
-            response.setStatus(HttpServletResponse.SC_OK);
-            try {
-                Scanner s = new Scanner(new File("logs" + System.getProperty("file.separator") + "latest.log"));
-                response.getWriter().println("----- Log for Server: -----");
-                while(s.hasNextLine()){
-                    response.getWriter().println(s.nextLine());
+            String args[] = target.split("/");
+            if(args.length == 2){
+                if(args[1].equalsIgnoreCase(Commands.auth[1])){
+                    baseRequest.setHandled(true);
+                    response.setStatus(HttpServletResponse.SC_OK);
+                    try {
+                        Scanner s = new Scanner(new File("logs" + System.getProperty("file.separator") + "latest.log"));
+                        response.getWriter().println("----- Log for Server: -----");
+                        while(s.hasNextLine()){
+                            response.getWriter().println(s.nextLine());
+                        }
+                    } catch (FileNotFoundException ex) {
+                        response.sendError(404, ex.toString());
+                    }
+                    return;
+                }else{
+                    baseRequest.setHandled(true);
+                    response.sendError(403, "Forbidden - Bad Password");
                 }
-            } catch (FileNotFoundException ex) {
-                response.sendError(404, ex.toString());
             }
         }
     }

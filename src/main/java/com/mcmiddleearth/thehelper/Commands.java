@@ -3,10 +3,13 @@ package com.mcmiddleearth.thehelper;
 
 import static com.mcmiddleearth.thehelper.TheHelper.THccl;
 import static com.mcmiddleearth.thehelper.TheHelper.THccm;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import javax.swing.Timer;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -18,7 +21,14 @@ import org.bukkit.plugin.Plugin;
 
 public class Commands implements TabExecutor{
     
-    public static String auth = "-1";
+    public static String auth[] = {"-1", "-1"};
+    
+    public final static Timer AuthTimer = new Timer(1000 * 60 * 5, new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent evt) {
+                    auth = new String[] {"-1", "-1"};
+                }
+            });
     
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -81,9 +91,15 @@ public class Commands implements TabExecutor{
                             player.sendMessage(ChatColor.YELLOW + "Last Played: " + ChatColor.DARK_GREEN + String.valueOf(new Date(p.getLastPlayed())));
                             return true;
                         }else if(args[0].equalsIgnoreCase("LogAuth")){
-                            Commands.auth = player.getAddress().toString().replace("/", "");
-                            Commands.auth = Commands.auth.substring(0, Commands.auth.indexOf(":"));
-                            return true;
+                            if(args.length == 2){
+                                Commands.auth[0] = player.getAddress().toString().replace("/", "");
+                                Commands.auth[0] = Commands.auth[0].substring(0, Commands.auth[0].indexOf(":"));
+                                Commands.auth[1] = args[1];
+                                player.sendMessage("Authenticated as of " + new Date().toString() + " with ip " + Commands.auth[0] + " with password " + Commands.auth[1]);
+                                AuthTimer.start();
+                                return true;
+                            }
+                            return false;
                         }else{
                             Plugin p = Bukkit.getServer().getPluginManager().getPlugin(args[0]);
                             if(p == null){
@@ -110,6 +126,10 @@ public class Commands implements TabExecutor{
                         }           
                     }
                }
+           }else{
+                sender.sendMessage(THccm+"You are not a developer :P");
+                sender.sendMessage(THccm+"Here is cute bunny for trying though http://i.imgur.com/54J05ss.jpg");
+                return true;
            }
         } else {
            sender.sendMessage(THccm+"You must be a player!");
