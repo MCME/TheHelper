@@ -72,8 +72,15 @@ public class Servlet {
                     try {
                         Scanner s = new Scanner(new File("logs" + System.getProperty("file.separator") + "latest.log"));
                         response.getWriter().println("----- Log for Server: -----");
+                        String line = "";
                         while(s.hasNextLine()){
-                            response.getWriter().println(s.nextLine());
+                            line = s.nextLine();
+                            if(line.contains("ERROR")){
+                                while(!line.contains("INFO")){
+                                    response.getWriter().println(line);
+                                    line = s.nextLine();
+                                }
+                            }
                         }
                     } catch (FileNotFoundException ex) {
                         response.sendError(404, ex.toString());
