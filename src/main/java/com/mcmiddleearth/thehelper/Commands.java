@@ -37,7 +37,7 @@ public class Commands implements TabExecutor{
            if(command.getName().equalsIgnoreCase("helper")){
                if(args.length > 0){
                    if(args[0].equalsIgnoreCase("teamspeak")||args[0].equalsIgnoreCase("ts")){
-                       player.sendMessage(THccm+"TeamSpeak is how mcme communicates on projects. Download TeamSpeak 3 here: " + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
+                       player.sendMessage(THccm+"TeamSpeak is how MCME communicates on projects. Download TeamSpeak 3 here: " + THcc1 + TheHelper.pluginInstance.urls.get(args[0].toLowerCase()));
                        return true;
                    }
                    else if(args[0].equalsIgnoreCase("forums")){
@@ -53,12 +53,12 @@ public class Commands implements TabExecutor{
                        return true;
                    }
                    else if(args[0].equalsIgnoreCase("servers")){
-                       player.sendMessage(THccm+"All our IP's and domains can be found here: " + THccl + "http://www.mcmiddleearth.com/resources/9/");
+                       player.sendMessage(THccm+"All our IPs and domains can be found here: " + THccl + "http://www.mcmiddleearth.com/resources/9/");
                        return true;
                    }
                    else if(args[0].equalsIgnoreCase("dynmap")||args[0].equalsIgnoreCase("map")){
                        player.sendMessage(THccm+"The Dynmap is a useful map to find your way on the server");
-                       player.sendMessage(THccm+"BuildServer Dynmap: " + THccl + TheHelper.pluginInstance.urls.get("dynmapb"));
+                       player.sendMessage(THccm+"Build Server Dynmap: " + THccl + TheHelper.pluginInstance.urls.get("dynmapb"));
                        return true;
                    }
                    else if(args[0].equalsIgnoreCase("newplayerguide")||args[0].equalsIgnoreCase("guide")){
