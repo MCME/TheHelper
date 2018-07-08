@@ -65,14 +65,9 @@ public class TheHelper extends JavaPlugin {
                     }
                 }
                 commands.put(args[1], messageBuilder.toString());
-                if(TheHelper.this.getConfig().contains(args[1])) {
-                    TheHelper.this.getConfig().set(args[1], messageBuilder.toString());
-                    TheHelper.this.saveConfig();
-                } else {
-                    TheHelper.this.getConfig().addDefault(args[1], messageBuilder.toString());
-                    TheHelper.this.saveConfig();
-                }
-                sender.sendMessage("Help option added");
+                TheHelper.this.getConfig().set(args[1], messageBuilder.toString());
+                TheHelper.this.saveConfig();
+                sender.sendMessage("Help option " + args[1] + " added");
                 return true;
             }
             if(sender.hasPermission(admin) && args[0].equalsIgnoreCase("remove")) {
