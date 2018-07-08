@@ -1,12 +1,16 @@
-url:
-    teamspeak: http://www.mcmiddleearth.com/resources/teamspeak-guide.44/
-    forums: http://www.mcmiddleearth.com/forums/
-    textures: http://mcmiddleearth.com/resources/categories/9/
-    ranks: http://www.mcmiddleearth.com/wiki/ranks-and-duties/
-    servers: http://www.mcmiddleearth.com/resources/9/
-    dynmapb: http://build.mcmiddleearth.com:8123
-    dynmapfb: http://freebuild.mcmiddleearth.com:8123
-    newplayerguide: http://www.mcmiddleearth.com/pages/new-player-guide/
-    guide: http://www.mcmiddleearth.com/pages/new-player-guide/
-    rules: http://www.mcmiddleearth.com/help/terms
-welcomeMSG: false
+teamspeak: >
+  TeamSpeak is how MCME communicates on projects. Download TeamSpeak 3 here: http://www.mcmiddleearth.com/resources/teamspeak-guide.44/
+forums: >
+  The forums are where discussions take place and where you can find help. Visit: http://www.mcmiddleearth.com/forums/
+textures: >
+  The various Resource Packs are available at: http://mcmiddleearth.com/resources/categories/9/
+ranks: >
+  Information about the ranks and their duties is available at: http://www.mcmiddleearth.com/wiki/ranks-and-duties/
+servers: >
+  All our IPs and domains can be found here: http://www.mcmiddleearth.com/resources/9/
+map: >
+  The Dynmap is a useful map to find your way on the server: http://build.mcmiddleearth.com:8123
+guide: >
+  A useful guide for new players: http://www.mcmiddleearth.com/pages/new-player-guide/
+rules: >
+  Our Terms of Service and Rules can be found here: http://www.mcmiddleearth.com/help/terms

@@ -1,29 +1,12 @@
-name: TheHelper
-main: com.mcmiddleearth.thehelper.TheHelper
-version: 1.5
+name: ${project.artifactId}
+main: ${project.groupId}.thehelper.TheHelper
+version: ${project.version}
 website: ${project.url}
-authors: [DonoA, q220, aaldim]
 description: Helper plugin for Minecraft Middle Earth.
-author: DonoA
 commands:
   helper:
     description: Helps new players
     usage: |
-            /helper forums
-            /helper textures
-            /helper map
-            /helper guide
-            /helper rules
-            /helper servers
-  devinfo:
-    description: Helps devs
-    usage: |
-            /devinfo versions
-            /devinfo player [player]
-            /devinfo [plugin]
-#            /devinfo jobs TSmonitor
-#            /devinfo jobs TSmonitor <channel>
-permissions:
-  TheHelper.info:
-    default: op
-    description: permissions for developers.
+           /helper add <key> <value>
+           /helper remove <key>
+           /helper <help command>
