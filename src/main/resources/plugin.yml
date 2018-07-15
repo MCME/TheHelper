@@ -10,3 +10,7 @@ commands:
            /helper add <key> <value>
            /helper remove <key>
            /helper <help command>
+permissions:
+    thehelper.admin:
+        description: Gives access to all helper commands
+        default: op

@@ -8,10 +8,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class TheHelper extends JavaPlugin {
@@ -87,7 +85,7 @@ public class TheHelper extends JavaPlugin {
                 sendCommandHelp(sender);
                 return true;
             }
-            sender.sendMessage(THccm + help);
+            sender.sendMessage(THccm + help.replace('#', ChatColor.COLOR_CHAR));
             return true;
         }
 
